@@ -50,17 +50,18 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                currentQuestion.text,
+                '${currentQuestion.text} ?',
                 style: const TextStyle(
-                  fontSize: 20,
+                  fontSize: 24,
                   color: Color.fromARGB(255, 4, 106, 23),
+                  fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: 20,
               ),
-              ...currentQuestion.getShuffledAnswers().map((answer) {
+              ...currentQuestion.shuffledAnswers.map((answer) {
                 return AnswerButton(
                     answerText: answer,
                     onTap: () {
